@@ -1,0 +1,78 @@
+<section id="wrapper" class="registration_back">
+  <div class="registration-box login-sidebar">
+  <mat-card class="card_view">
+    
+  <mat-card-header>
+     
+    <mat-card-title class="">Registration Form</mat-card-title>
+    <img class="registration_image" src="assets/img/faces/marc.jpg" alt="Avatar" style="width:100px">
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form"  [formGroup]="registerForm" novalidate>
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="firstName" formControlName="firstName"  name="firstName" required>
+            </mat-form-field>
+            <div *ngIf="registerForm.controls['firstName'].errors && ( !registerForm.controls['firstName'].pristine || submitted ||registerForm.controls['firstName'].touched )" class="error-msg">
+              <div [hidden]="!registerForm.controls['firstName'].errors.required">firstName Is Required.</div>
+              <div [hidden]="!registerForm.controls['firstName'].errors.pattern">Invalid firstName.</div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="lastName" type="lastName" formControlName="lastName" name="lastName" required>
+          </mat-form-field>
+          <div *ngIf="registerForm.controls['lastName'].errors && ( !registerForm.controls['lastName'].pristine || submitted ||registerForm.controls['lastName'].touched )" class="error-msg">
+            <div [hidden]="!registerForm.controls['lastName'].errors.required">lastName Is Required.</div>
+            <div [hidden]="!registerForm.controls['lastName'].errors.pattern">Invalid lastName.</div>
+          </div>
+        </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="cell" type="cell" formControlName="cell" name="cell" required>
+            </mat-form-field>
+            <div *ngIf="registerForm.controls['cell'].errors && ( !registerForm.controls['cell'].pristine || submitted ||registerForm.controls['cell'].touched )" class="error-msg">
+                <div [hidden]="!registerForm.controls['cell'].errors.required">cell Is Required.</div>
+                <div [hidden]="!registerForm.controls['cell'].errors.pattern">Invalid cell.</div>
+            </div>
+        </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="email" type="email" formControlName="email" name="email" required>
+            </mat-form-field>
+            <div *ngIf="registerForm.controls['email'].errors && ( !registerForm.controls['email'].pristine || submitted ||registerForm.controls['email'].touched )" class="error-msg">
+                <div [hidden]="!registerForm.controls['email'].errors.required">email Is Required.</div>
+                <div [hidden]="!registerForm.controls['email'].errors.pattern">Invalid email.</div>
+            </div>
+        </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="password" type="password" formControlName="password" name="password" required>
+            </mat-form-field>
+            <div *ngIf="registerForm.controls['password'].errors && ( !registerForm.controls['password'].pristine || submitted ||registerForm.controls['password'].touched )" class="error-msg">
+                <div [hidden]="!registerForm.controls['password'].errors.required">password Is Required.</div>
+                <div [hidden]="!registerForm.controls['password'].errors.pattern">Invalid password.</div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+  </mat-card-content>
+  
+  <mat-card-actions>
+    <button mat-raised-button type="submit" value="Submit" (click)="reg()"  color="primary">Registration</button>
+  </mat-card-actions>
+</mat-card>
+</div>
+</section>

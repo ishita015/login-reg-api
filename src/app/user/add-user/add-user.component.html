@@ -1,0 +1,58 @@
+  
+  <div class="main-content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="card">
+                      <div class="card-header card-header-danger">
+                          <h3 class="card-title">Add User</h3>
+                          <!-- <p class="card-category">Complete your profile</p> -->
+                      </div>
+                      <div class="card-body">
+                          <form  >
+                             
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="firstName"  [(ngModel)]="userInfoVo.firstName"  name="firstName" required>
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="lastName" type="lastName" [(ngModel)]="userInfoVo.lastName" name="lastName" required>
+                                    </mat-form-field>
+                                  </div>
+                              </div>
+                             
+                              <div class="row">
+                                  <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="cell" type="cell" [(ngModel)]="userInfoVo.cell"  name="cell" required>
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="email" type="email" [(ngModel)]="userInfoVo.email"  name="email" required>
+                                    </mat-form-field>
+                                  </div>
+                                 
+                              </div>
+                              <div class="row">
+                                  <div class="col-md-6">
+                                   
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="password" type="password" [(ngModel)]="userInfoVo.password" name="password" required>
+                                     </mat-form-field>
+                                      
+                                  </div>
+                              </div>
+                              <button mat-raised-button type="submit" value="Submit" (click)="add(userInfoVo.id)" class="btn btn-danger pull-right">Submit</button>
+                              <div class="clearfix"></div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+    

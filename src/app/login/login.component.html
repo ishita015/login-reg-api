@@ -1,0 +1,48 @@
+
+<section id="wrapper" class="login_back">
+  <div class="login-box login-sidebar">
+  <mat-card class="example-card">
+    
+  <mat-card-header>
+     <mat-card-title class="">Login</mat-card-title>
+     <img class="login_image" src="assets/img/faces/marc.jpg" alt="Avatar" style="width:100px">
+  </mat-card-header>
+  
+  <mat-card-content>
+    <form class="example-form" [formGroup]="loginForm">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+            <input matInput placeholder="Email" formControlName="email" name="email" required>
+           </mat-form-field>
+           <div *ngIf="loginForm.controls['email'].errors && ( !loginForm.controls['email'].pristine || submitted ||loginForm.controls['email'].touched )" class="error-msg">
+            <div [hidden]="!loginForm.controls['email'].errors.required">Email Is Required.</div>
+            <div [hidden]="!loginForm.controls['email'].errors.pattern">Invalid Email.</div>
+           </div>
+          </td>
+        </tr>
+        <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password"  minlength="6"  onkeypress="if(this.value.length==10) return false;return event.charCode >= 48 && event.charCode <= 57 ||event.charCode == '.' || event.charCode == 250 " type="password" formControlName="password" name="password" required>
+          </mat-form-field>
+          <div *ngIf="loginForm.controls['password'].errors && ( !loginForm.controls['password'].pristine || submitted ||loginForm.controls['password'].touched )" class="error-msg">
+              <div [hidden]="!loginForm.controls['password'].errors.required">Password Is Required.</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </form>
+  
+  </mat-card-content>
+  <mat-card-actions class="signin_btn">
+    <button mat-raised-button (click)="login()"  color="primary">SignIn</button>
+  </mat-card-actions>
+  
+  <mat-card-actions>
+    <button mat-raised-button (click)="register()" color="primary">SignUp</button>
+  </mat-card-actions>
+  </mat-card>
+ </div>
+</section>
